@@ -4,14 +4,21 @@ let menu = {
     title: "My menu"
 }
 
-const multiplyNumeric = function (menu, multiplier) {
+
+const multiplyNumeric = function (obj, multiplier) {
     var newMenu = {}
-    for (let val in menu){
-        if (typeof menu[val]=== "number"){
-            menu[val] * multiplier
-        }            
+    for (let key in obj){
+        if (typeof obj[key] == "string"){
+            newMenu[key] = "My menu"
+            
+        }else{
+            newMenu[key] = obj[key]*2
+        }
+        
     }
+
     return newMenu
+
 }
 
 const newMenu = multiplyNumeric(menu, 2)
